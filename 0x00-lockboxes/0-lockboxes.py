@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Check if given list of list can open all boxes"""
+""" Check if given list of list can open all boxes """
 
 
 def canUnlockAll(boxes):
@@ -33,5 +33,4 @@ def abrircaja(p, boxes, cajas, abiertas):
 
     if sum(cajas) == 0:
         return True
-    else:
-        return False
+    return False
