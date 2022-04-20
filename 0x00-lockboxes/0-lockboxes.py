@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-'''Check if given list of list can open all boxes'''
+""" Check if given list of list can open all boxes"""
 
 
 def canUnlockAll(boxes):
-    ''' Method to check if list contain right secuence to open all boxes '''
+    """ Method to check if list contain right secuence to open all boxes """
     cajas = []
     abiertas = [0]
 
@@ -21,7 +21,7 @@ def canUnlockAll(boxes):
 
 
 def abrircaja(p, boxes, cajas, abiertas):
-    ''' Recursive check for opened boxes '''
+    """ Recursive check for opened boxes """
     nuevas = p
 
     for s in nuevas:
