@@ -34,3 +34,4 @@ def abrircaja(p, boxes, cajas, abiertas):
     if sum(cajas) == 0:
         return True
     return False
+
