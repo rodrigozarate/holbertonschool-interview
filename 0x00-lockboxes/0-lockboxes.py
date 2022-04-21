@@ -10,19 +10,9 @@ def canUnlockAll(boxes):
         return False
 
     for h, k in enumerate(boxes):
-        print("key", h)
-        print("value", k)
-        print("asi va en loop 1: ", abiertas)
-        if h in abiertas:
-            print("is in keys in hand:", h)
         for x in boxes[h]:
-            print("rev", x)
-
             if x not in abiertas and x < len(boxes) and x != h:
                 abiertas.append(x)
-                print("asi va: ", abiertas)
-
-    print("asi quedo: ", abiertas)
 
     if len(abiertas) == len(boxes):
         return True
