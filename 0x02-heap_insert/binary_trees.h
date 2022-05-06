@@ -21,6 +21,10 @@ typedef struct binary_tree_s
 } binary_tree_t;
 
 void binary_tree_print(const binary_tree_t *);
+size_t binary_tree_height(const binary_tree_t *tree);
+int binary_tree_is_leaf(const binary_tree_t *node);
+binary_tree_t *insertnode(binary_tree_t *tree, size_t level, int value);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
+
 
 #endif /* _BINARY_TREES_H_ */
