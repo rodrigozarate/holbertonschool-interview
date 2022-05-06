@@ -1,4 +1,4 @@
-#include binary_trees.h
+#include "binary_trees.h"
 
 /**
  * binary_tree_height - size of tree
@@ -24,6 +24,25 @@ size_t binary_tree_height(const binary_tree_t *tree)
 }
 
 /**
+ * binary_tree_depth - Jhony Deep defeat Amber
+ * @tree: pointer
+ * Return: depth
+ */
+size_t binary_tree_depth(const heap_t *tree)
+{
+	size_t depth = 0;
+
+	if (tree == NULL)
+		return (0);
+	while (tree->parent)
+	{
+		depth++;
+		tree = tree->parent;
+	}
+	return (depth);
+}
+
+/**
  * binary_tree_is_leaf - validate if tree is leaf
  * @node: pointer
  * Return: 0 or 1 if tree is leaf
@@ -40,7 +59,7 @@ int binary_tree_is_leaf(const binary_tree_t *node)
 /**
  * insertnode - Instrerts a node
  * @tree: pointer
- * @spot: place
+ * @level: place
  * @value: value
  * Return: node
  */
@@ -52,7 +71,7 @@ binary_tree_t *insertnode(binary_tree_t *tree, size_t level, int value)
 		return (NULL);
 	if (binary_tree_depth(tree) == level)
 	{
-		if (binary_tree_is_none(tree))
+		if (binary_tree_is_leaf(tree))
 			return (tree->left = binary_tree_node(tree, value));
 		if (tree->left != NULL && tree->right == NULL)
 			return (tree->right = binary_tree_node(tree, value));
@@ -74,20 +93,24 @@ binary_tree_t *insertnode(binary_tree_t *tree, size_t level, int value)
  */
 heap_t *heap_insert(heap_t **root, int value)
 {
-	/* if adress is null make root */
+	size_t spot, i, tempnodevalue = 0;
+	heap_t *node = NULL;
+
 	if (*root == NULL)
 	{
 		*root = binary_tree_node(*root, value);
 		return (*root);
 	}
+
 	spot = binary_tree_height(*root);
-	/* check for place to put the node according to MAX heap */
+
 	for (i = 0; i <= spot; i++)
 	{
 		node = (heap_t *)insertnode((binary_tree_t *)*root, i, value);
 		if (node != NULL)
 			break;
 	}
+
 	while (node->parent != NULL && node->n > node->parent->n)
 	{
 		tempnodevalue = node->parent->n;
