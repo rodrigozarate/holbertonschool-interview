@@ -23,6 +23,8 @@ listint_t *add_nodeint_end(listint_t **head, const int n);
 void free_listint(listint_t *head);
 
 int count_nodes(listint_t *head);
+listint_t *insert_node_head(listint_t **head, const int n);
+int compare_lists(listint_t *head, listint_t *copy_list);
 
 int is_palindrome(listint_t **head);
 
