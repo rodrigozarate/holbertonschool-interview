@@ -32,10 +32,10 @@ if __name__ == '__main__':
             timecode = b[0].lstrip(' [')
             try:
                 datetime.strptime(timecode, '%Y-%m-%d %H:%M:%S.%f')
-                except:
-                    stderr.write("{}: {}: wrong format\n".format(
-                        argv[0], l_number))
-                    pass
+            except:
+                stderr.write("{}: {}: wrong format\n".format(
+                    argv[0], l_number))
+                pass
 
             c = b[1].split('"')
             c = c[1:]
