@@ -12,11 +12,12 @@ def print_data(f_size, valid_codes):
 
 if __name__ == '__main__':
     from sys import argv, stderr, stdin
-    import datetime
+    from datetime import datetime
     from collections import OrderedDict
 
     l_number = 0
     f_size = 0
+    vaca = 0
     valid_codes = OrderedDict.fromkeys([200, 301, 400,
                                         401, 403, 404, 405, 500], 0)
 
@@ -33,7 +34,7 @@ if __name__ == '__main__':
             try:
                 datetime.strptime(timecode, '%Y-%m-%d %H:%M:%S.%f')
             except:
-                stderr.write("{}: {}: wrong format\n".format(
+                stderr.write("{}: {}: wrong time format\n".format(
                     argv[0], l_number))
                 pass
 
