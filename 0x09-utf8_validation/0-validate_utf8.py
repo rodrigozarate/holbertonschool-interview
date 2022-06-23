@@ -9,13 +9,8 @@ def validUTF8(data):
 
     data = [n + 256 if n < 0 and n > -129 else n for n in data]
 
-    print(data)
-    print('-----------')
-
     data = [n & 0xFF if n >= 0 else n for n in data]
 
-    print(data)
-    print('-----------')
     try:
         bytes(data).decode(encoding='utf-8', errors='strict')
     except (ValueError, UnicodeDecodeError):
