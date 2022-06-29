@@ -13,7 +13,7 @@ static void slide_line_left(int *line, size_t size)
 	int j = 0;
 	int k = 0;
 
-	for (;i < (int)size; i++)
+	for (; i < (int)size; i++)
 	{
 		if (line[i] == 0)
 		{
@@ -41,7 +41,7 @@ static void merge_line_left(int *line, size_t size)
 {
 	int i = 0;
 
-	for (;i < (int)size; i++)
+	for (; i < (int)size; i++)
 	{
 		if (i + 1 < (int)size)
 		{
@@ -66,7 +66,7 @@ static void slide_line_right(int *line, size_t size)
 	int j = (int)size - 1;
 	int k = (int)size - 1;
 
-	for (;i >= 0; i--)
+	for (; i >= 0; i--)
 	{
 		if (line[i] == 0)
 		{
@@ -76,7 +76,7 @@ static void slide_line_right(int *line, size_t size)
 		{
 			line[k] = line[j];
 			if (k != j)
-                        {
+			{
 				line[j] = 0;
 			}
 			j--;
@@ -87,7 +87,7 @@ static void slide_line_right(int *line, size_t size)
 }
 
 /**
-* merge_line_left - merge to the left
+* merge_line_right - merge to the right
 * @line: array
 * @size: size of the array
 */
@@ -95,7 +95,7 @@ static void merge_line_right(int *line, size_t size)
 {
 	int i = (int)size - 1;
 
-	for (;i >= 0; i--)
+	for (; i >= 0; i--)
 	{
 		if (i - 1 >= 0)
 		{
