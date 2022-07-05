@@ -65,7 +65,6 @@ void changearray(int **places, int csize, int *mods, int ksize)
 					q = mods[k];
 					p++;
 				}
-
 			}
 			n--;
 			if (n <= 0)
@@ -127,11 +126,8 @@ void menger(int level)
 		}
 	}
 
-
 	changearray(places, csize, mods, ksize);
-
 	printarray(places, csize);
-
 	freeplaces(places, csize);
 	free(mods);
 }
