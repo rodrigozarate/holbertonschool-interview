@@ -39,11 +39,9 @@ void printarray(int **places, int size)
 void changearray(int **places, int csize, int *mods, int ksize)
 {
 	int i, j, k, n, o, p, q;
+	int pattern[3] = {1, 0, 1};
 
 	k = 0, n = 0, o = 0, p = 0, q = 0;
-	int pattern[3];
-
-	pattern[] = {1, 0, 1};
 
 	for (k = 0; k < ksize; k++)
 	{
