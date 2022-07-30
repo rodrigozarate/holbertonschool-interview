@@ -1,6 +1,8 @@
 #ifndef _BTH_AVL_
 #define _BTH_AVL_
 
+#include <stddef.h>
+
 /**
 * struct binary_tree_s - Binary tree node
 *
