@@ -13,7 +13,11 @@ try {
 			mico = JSON.parse(body);
 
 			for(character in mico["characters"]){
-				console.log(mico["characters"][character]);
+				whom = mico["characters"][character];
+				who = request(whom, function(error, response, body){
+					loro = JSON.parse(body);
+					console.log(loro["name"]);
+				});
 			}
 		}
 	});
@@ -22,7 +26,7 @@ try {
 }
 // get the films endpoint OK
 
-// get the character list of urls
+// get the character list of urls OK
 
 // get each name from people endpoint
 // https://swapi-api.hbtn.io/api/people/1/
