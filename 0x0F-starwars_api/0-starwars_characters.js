@@ -28,11 +28,6 @@ async function charlist () {
     console.error(error);
   }
 }
-// get the films endpoint OK
-
-// get the character list of urls OK
-
-// get each name from people endpoint OK
 
 what = request(url+film, function(error, response, body){
   if (!error && response.statusCode == 200) {
@@ -41,6 +36,3 @@ what = request(url+film, function(error, response, body){
 	charlist(mico);
   }
 });
-
-// https://swapi-api.hbtn.io/api/people/1/
-// print
