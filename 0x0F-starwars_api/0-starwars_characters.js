@@ -4,6 +4,7 @@ const request = require('request');
 
 const url = 'https://swapi-api.hbtn.io/api/films/';
 const film = process.argv[2];
+let mico = '';
 
 function whois (whom) {
   return new Promise((resolve, reject) => {
@@ -17,7 +18,6 @@ function whois (whom) {
 }
 
 async function charlist () {
-  const mico = [];
   try {
     for (const character in mico.characters) {
       const whom = mico.characters[character];
@@ -31,7 +31,7 @@ async function charlist () {
 
 request(url + film, function (error, response, body) {
   if (!error && response.statusCode === 200) {
-    const mico = JSON.parse(body);
+    mico = JSON.parse(body);
     charlist(mico);
   }
 });
