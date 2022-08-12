@@ -1,4 +1,4 @@
-#!/Users/user/.nvm/versions/node/v10.14.0/bin/node
+#!/usr/bin/node
 
 const request = require('request');
 
