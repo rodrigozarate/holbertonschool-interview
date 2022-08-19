@@ -2,7 +2,7 @@
 """ Calculates water between walls """
 
 
-def rain(walls)
+def rain(walls):
     """ Check the ammount of water """
     if type(walls) is not list
         return 0
