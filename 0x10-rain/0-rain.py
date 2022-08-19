@@ -4,7 +4,7 @@
 
 def rain(walls):
     """ Check the ammount of water """
-    if type(walls) is not list:
+    if type(walls) is not list or not all(type(n) is int for n in walls):
         return 0
 
     wtr = 0
