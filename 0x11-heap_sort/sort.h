@@ -3,6 +3,7 @@
 
 #include <stddef.h>
 
+void print_array(const int *array, size_t size);
 int indexP(int indx);
 int indexLChild(int indx);
 void doHeap(int *array, size_t size);

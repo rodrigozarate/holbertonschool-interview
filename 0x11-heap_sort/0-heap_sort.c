@@ -13,7 +13,7 @@ int indexP(int indx)
 /**
 * indexLChild - Returns index of left child
 * @indx: index
-* Returns:int
+* Return: int
 */
 int indexLChild(int indx)
 {
@@ -28,6 +28,7 @@ int indexLChild(int indx)
 void doHeap(int *array, size_t size)
 {
 	int start;
+
 	start = indexP(size - 1);
 
 	while (start >= 0)
@@ -47,6 +48,7 @@ void doHeap(int *array, size_t size)
 void siftDown(int *array, size_t size, int start, int end)
 {
 	int root, swap, temp, child;
+
 	root = start;
 
 	while (indexLChild(root) <= end)
@@ -80,12 +82,12 @@ void heap_sort(int *array, size_t size)
 {
 	int indexEnd, temp;
 
-	if (!aray || size < 2)
+	if (!array || size < 2)
 		return;
 
 	doHeap(array, size);
 
-	inexEnd = (int)size - 1;
+	indexEnd = (int)size - 1;
 	while (indexEnd > 0)
 	{
 		temp = array[indexEnd];
