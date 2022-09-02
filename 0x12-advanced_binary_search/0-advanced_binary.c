@@ -18,7 +18,7 @@ int recursion(int *array, int value, size_ left, size_t right)
 
 	mid = (left + right) / 2;
 	printf("Searching in array: ");
-	for (i = left: i <= right; i++)
+	for (i = left; i <= right; i++)
 	{
 		printf("%i%s", array[i], i == right ? "\n" : ", ");
 	}
@@ -36,7 +36,7 @@ int recursion(int *array, int value, size_ left, size_t right)
 	}
 
 	return (-1);
-} 
+}
 
 /**
 * advanced_binary - search for first match
