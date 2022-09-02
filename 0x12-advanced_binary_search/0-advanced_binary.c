@@ -9,7 +9,7 @@
 * @left: min limit
 * Return: index
 */
-int recursion(int *array, int value, size_ left, size_t right)
+int recursion(int *array, int value, size_t left, size_t right)
 {
 	size_t mid, i;
 
