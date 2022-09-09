@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ Doc to counter of hot reddit topics """
-from re import findall, IGNORECASE
 from requests import get
 
 
@@ -23,16 +22,14 @@ def count_words(subreddit, word_list, word_totals={}, after=''):
     if response.status_code != 200 or len(word_list) == 0:
         return
 
-    regex = '^{}$|^{} +| +{} +| +{}$'
     word_count = dict.fromkeys([word.lower() for word in word_list], 0)
     current_page_list = response.json().get('data').get('children', [])
 
     for post in current_page_list:
         title = post.get('data').get('title', '')
+        tlow = [t.lower() for t in title.split(' ')]
         for word in word_list:
-            count = len(findall(regex.format(word, word, word, word),
-                                title, IGNORECASE))
-            word_count[word.lower()] += count
+            word_count[word.lower()] += tlow.count(word.lower())
 
     for key, value in word_count.items():
         if key in word_totals:
