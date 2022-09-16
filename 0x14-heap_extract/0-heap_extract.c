@@ -98,7 +98,7 @@ heap_t *lILO(heap_t *root)
 
 
 /**
- * maxHeapSiftDown - Reconstruct
+ * maxHSD - Reconstruct
  * @root: pointer to root
  */
 void maxHSD(heap_t *root)
