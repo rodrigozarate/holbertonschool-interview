@@ -71,7 +71,7 @@ void domult(unsigned int *resp, char *a_int, size_t a_len,
 	if (resp == NULL || a_int == NULL || b_int == NULL)
 		return;
 
-	for (i = b_len - 1; i >= 0; i--)
+	for (i = a_len - 1; i >= 0; i--)
 	{
 		sum = 0;
 		d1 = a_int[i] - '0';
@@ -103,7 +103,7 @@ int main(int argc, char **argv)
 	if (argc != 3)
 		error(98);
 
-	if (!valid(argv[1] || !valid(argv[2])))
+	if (!valid(argv[1]) || !valid(argv[2]))
 		error(98);
 
 	/* save args into array */
@@ -118,6 +118,9 @@ int main(int argc, char **argv)
 	/* multiply each int from a with b arrays */
 	domult(resp, argv[1], a_len, argv[2], b_len);
 
+	for (i = 0; !resp[i] && i < t_len; i++)
+	{}
+	
 	for (; i < t_len; i++)
 		_putchar(resp[i] + '0');
 	_putchar('\n');
