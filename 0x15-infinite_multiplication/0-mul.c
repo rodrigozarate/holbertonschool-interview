@@ -120,7 +120,10 @@ int main(int argc, char **argv)
 
 	for (i = 0; !resp[i] && i < t_len; i++)
 	{}
-	
+
+	if (i == t_len)
+		_putchar('0');
+
 	for (; i < t_len; i++)
 		_putchar(resp[i] + '0');
 	_putchar('\n');
