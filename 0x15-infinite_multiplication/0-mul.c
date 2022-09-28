@@ -55,6 +55,41 @@ int valid(char *c)
 }
 
 /**
+ * domult - multiplies two numbers
+ * @resp: response array
+ * @a_int: operand a
+ * @a_len: size of array of operand a
+ * @b_int: operand b
+ * @b_len: size of array of operand b
+ */
+void domult(unsigned int *resp, char *a_int, size_t a_len,
+			char *b_int, size_t b_len)
+{
+	int i, j, sum;
+	unsigned char d1, d2;
+
+	if (resp == NULL || a_int == NULL || b_int == NULL)
+		return;
+
+	for (i = b_len - 1; i >= 0; i--)
+	{
+		sum = 0;
+		d1 = a_int[i] - '0';
+
+		for (j = b_len - 1; j >= 0; j--)
+		{
+			d2 = b_int[j] - '0';
+			sum += resp[i + j + 1] + (d1 * d2);
+			resp[i + j + 1] = sum % 10;
+			sum /= 10;
+		}
+
+		if (sum > 0)
+			resp[i + j + 1] += sum;
+	}
+}
+
+/**
  * main - multiplies two integers
  * @argc: argument count
  * @argv: argument vector
@@ -81,6 +116,13 @@ int main(int argc, char **argv)
 	t_len = a_len + b_len;
 	resp = makespace(t_len);
 	/* multiply each int from a with b arrays */
-	/* sum results */
+	domult(resp, argv[1], a_len, argv[2], b_len);
+
+	for (; i < t_len; i++)
+		_putchar(resp[i] + '0');
+	_putchar('\n');
+
+	free(resp);
+
 	return (0);
 }
