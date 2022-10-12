@@ -42,14 +42,14 @@ void Duplicate(int *source, int *destiny, int indexA, int indexB)
 }
 
 /**
-* TopDownMerge - Join to be happy
+* TDMerge - Join to be happy
 * @source: int pointer
 * @destiny: int pointer
 * @indexA: int alfa
 * @indexH: int half
 * @indexB: int omega
 */
-void TopDownMerge(source, destiny, indexA, indexH, indexB)
+void TDMerge(int *source, int *destiny, int indexA, int indexH, int indexB)
 {
 	int i, j, k;
 
@@ -96,14 +96,14 @@ void SplitMergeTD(int *source, int *destiny, int indexA, int indexB)
 	if (!source || !destiny)
 		return;
 
-	if (indexA - indexB < 2)
+	if (indexB - indexA < 2)
 		return;
 
 	indexH = (indexA + indexB) / 2;
 
 	SplitMergeTD(destiny, source, indexA, indexH);
 	SplitMergeTD(destiny, source, indexH, indexB);
-	TopDownMerge(source, destiny, indexA, indexH, indexB);
+	TDMerge(source, destiny, indexA, indexH, indexB);
 }
 
 
@@ -125,6 +125,7 @@ void merge_sort(int *array, size_t size)
 
 	Duplicate(array, arr_copy, 0, size);
 	SplitMergeTD(array, arr_copy, 0, size);
+	Duplicate(arr_copy, array, 0, size);
 
 	free(arr_copy);
 }
