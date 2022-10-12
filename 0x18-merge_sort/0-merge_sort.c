@@ -49,7 +49,7 @@ void Duplicate(int *source, int *destiny, int indexA, int indexB)
 * @indexH: int half
 * @indexB: int omega
 */
-TopDownMerge(source, destiny, indexA, indexH, indexB)
+void TopDownMerge(source, destiny, indexA, indexH, indexB)
 {
 	int i, j, k;
 
