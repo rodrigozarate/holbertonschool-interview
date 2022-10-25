@@ -11,4 +11,3 @@ Given a pile of coins of different values, determine the fewest number of coins 
     You can assume you have an infinite number of each denomination of coin in the list
     Your solution's runtime will be evaluated in this task
 
-Erin lo ve yo u
