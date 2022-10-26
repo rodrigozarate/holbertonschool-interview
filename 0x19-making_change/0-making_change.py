@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
 """
 Change coin simulation
 @author: Rodrigo Zárate Algecira
