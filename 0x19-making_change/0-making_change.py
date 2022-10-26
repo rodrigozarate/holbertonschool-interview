@@ -6,9 +6,6 @@ Change coin simulation
 """
 
 
-from symbol import continue_stmt
-
-
 def makeChange(coins, total):
 	""" coins list  of coins, total value to get """
 	if total <= 0:
