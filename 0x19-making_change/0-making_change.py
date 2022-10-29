@@ -13,7 +13,7 @@ def makeChange(coins, total):
     coins.sort(reverse=True)
 
     coin_sum = 0
-    
+
     for coin_val in coins:
         while total >= coin_val:
             total -= coin_val
