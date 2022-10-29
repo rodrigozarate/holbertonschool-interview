@@ -15,12 +15,9 @@ def makeChange(coins, total):
     coin_sum = 0
     
     for coin_val in coins:
-        if coin_val <= total:
-            cant = total // coin_val
-            coin_sum += cant
-            total -= cant * coin_val
-        if total == 0:
-            break
+        while total >= coin_val:
+            total -= coin_val
+            coin_sum += 1
 
     if coin_sum == 0 or total != 0:
         return -1
