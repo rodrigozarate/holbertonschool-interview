@@ -10,14 +10,6 @@ def makeChange(coins, total):
     if total <= 0:
         return 0
 
-    if type(total) is not int or type(coins) is not list:
-        print("Invalid args")
-        return 0
-
-    if not all([type(coin) is int for coin in coins]):
-        print("Invalid args")
-        return 0
-
     coins.sort(reverse=True)
 
     coin_sum = 0
