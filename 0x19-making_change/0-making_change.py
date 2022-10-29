@@ -13,16 +13,16 @@ def makeChange(coins, total):
     coins.sort(reverse=True)
 
     coin_sum = 0
-    left = total
+    
     for coin_val in coins:
-        if coin_val <= left:
-            cant = left // coin_val
+        if coin_val <= total:
+            cant = total // coin_val
             coin_sum += cant
-            left -= cant * coin_val
-        if left == 0:
+            total -= cant * coin_val
+        if total == 0:
             break
 
-    if coin_sum == 0 or left != 0:
+    if coin_sum == 0 or total != 0:
         return -1
 
     return coin_sum
