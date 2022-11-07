@@ -4,7 +4,7 @@ Here you can find some of the common questions in interviews for developers
 
 Each one has it's own way to solve problems, this is what I do, solve problems
 
-[Example of minimum operations](https://github.com/rodrigozarate/holbertonschool-interview/blob/main/0x03-minimum_operations/steps.png)
+![Example of minimum operations](https://github.com/rodrigozarate/holbertonschool-interview/blob/main/0x03-minimum_operations/steps.png)
 ## Projects for interview preparation
 
 - 0x00-lockboxes
