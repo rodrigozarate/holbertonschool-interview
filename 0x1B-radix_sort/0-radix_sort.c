@@ -38,6 +38,12 @@ void doBuckets(int *bucketSize, int **buckets)
 	int *bucket;
 	int i;
 
+	if (!bucketSize || !buckets)
+	{
+		fprintf(stderr, "doBuckets: error\n");
+		exit(EXIT_FAILURE);
+	}
+
 	for (i = 0; i < 10; i++)
 	{
 		bucket = malloc(sizeof(int) * bucketSize[i]);
@@ -87,6 +93,9 @@ void radix_sort(int *array, size_t size)
 	int bucketSize[10], bucketLevel[10];
 	int max, intlong, pass, div, digit;
 	size_t i;
+
+	if (!array || size < 2)
+		return;
 
 	buckets = malloc(sizeof(int *) * 10);
 	if (!buckets)
